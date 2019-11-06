@@ -1,7 +1,20 @@
-import React from "react";
-import { Button, Card, Container, Form, Row, Col } from "react-bootstrap";
+import React, { useState } from "react";
+import {
+  Button,
+  Card,
+  Container,
+  Form,
+  Row,
+  Col,
+  Spinner
+} from "react-bootstrap";
 
 const HomePage = props => {
+  const [isLoading, setIsLoading] = useState(false);
+  const btnLogin = () => {
+    setIsLoading(true);
+  };
+
   return (
     <React.Fragment>
       <Container>
@@ -23,8 +36,21 @@ const HomePage = props => {
                     <Form.Control type="password" />
                   </Form.Group>
                   <Form.Group controlId="btnLogin">
-                    <Button variant="primary" block>
-                      Login
+                    <Button variant="primary" block onClick={btnLogin}>
+                      {isLoading ? (
+                        <React.Fragment>
+                          <Spinner
+                            as="span"
+                            animation="border"
+                            size="sm"
+                            role="status"
+                            aria-hidden="true"
+                          />
+                          <span className="sr-only">Loading...</span>
+                        </React.Fragment>
+                      ) : (
+                        "Login"
+                      )}
                     </Button>
                   </Form.Group>
                 </Form>
