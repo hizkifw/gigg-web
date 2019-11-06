@@ -29,6 +29,9 @@ const HomePage = props => {
                   <Breadcrumb.Item onClick={() => setStep(2)} active={step < 2}>
                     Upload Portfolio
                   </Breadcrumb.Item>
+                  <Breadcrumb.Item onClick={() => setStep(3)} active={step < 3}>
+                    Done
+                  </Breadcrumb.Item>
                 </Breadcrumb>
                 <Form>
                   {step === 0 ? (
@@ -86,7 +89,7 @@ const HomePage = props => {
                         <Card body className="text-center">
                           <img
                             src="/upload-cloud.svg"
-                            style={{ height: "5em" }}
+                            style={{ height: "5em", filter: "contrast(0.5)" }}
                           />
                           <p>Drag and drop files here to upload</p>
                           <p className="text-muted">or</p>
@@ -95,17 +98,40 @@ const HomePage = props => {
                           </Button>
                         </Card>
                       </Form.Group>
+                      <Button
+                        variant="link"
+                        block
+                        onClick={() => setStep(step + 1)}
+                      >
+                        Skip for now
+                      </Button>
+                    </React.Fragment>
+                  ) : step === 3 ? (
+                    <React.Fragment>
+                      <Card.Title as="h2" className="text-center">
+                        All done!
+                      </Card.Title>
+                      <Form.Group controlId="btnLogin">
+                        <p className="text-center">
+                          You can now log in to your dashboard
+                        </p>
+                        <Button block variant="primary" href="#/login">
+                          Login
+                        </Button>
+                      </Form.Group>
                     </React.Fragment>
                   ) : null}
-                  <Form.Group controlId="btnNext">
-                    <Button
-                      variant="primary"
-                      block
-                      onClick={() => setStep(step + 1)}
-                    >
-                      Next
-                    </Button>
-                  </Form.Group>
+                  {step !== 3 && (
+                    <Form.Group controlId="btnNext">
+                      <Button
+                        variant="primary"
+                        block
+                        onClick={() => setStep(step + 1)}
+                      >
+                        Next
+                      </Button>
+                    </Form.Group>
+                  )}
                 </Form>
               </Card.Body>
             </Card>

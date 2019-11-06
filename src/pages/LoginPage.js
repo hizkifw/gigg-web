@@ -13,6 +13,9 @@ const HomePage = props => {
   const [isLoading, setIsLoading] = useState(false);
   const btnLogin = () => {
     setIsLoading(true);
+    setTimeout(() => {
+      window.location = "#/dash/freelance";
+    }, 1000);
   };
 
   return (
