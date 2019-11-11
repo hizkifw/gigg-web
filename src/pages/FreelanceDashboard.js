@@ -48,23 +48,21 @@ const HomePage = props => {
           <Col>
             <Row>
               <Col>
-                <Card body>
-                  <Card.Title>TOTAL EARNINGS</Card.Title>
-                  <h1>$69,420</h1>
-                  <p class="text-muted">Last month you earned $1,337</p>
-                  <Image fluid src="/chart.jpg" />
+                <Card body className="mb-2">
+                  <h1 className="d-inline align-middle mr-3 pr-3 border-right">
+                    43
+                  </h1>
+                  Pending orders
                 </Card>
-                <Card body className="mt-4">
-                  <Row>
-                    <Col>
-                      <h1>43</h1>
-                    </Col>
-                    <Col>Pending orders</Col>
-                  </Row>
+                <Card body className="mb-2">
+                  <h1 className="d-inline align-middle mr-3 pr-3 border-right">
+                    10
+                  </h1>
+                  Unread messages
                 </Card>
               </Col>
               <Col>
-                <Card body>
+                <Card body className="mb-2">
                   <Card.Title>STATISTICS</Card.Title>
                   <Image fluid src="/chart2.png" />
                   <Row className="text-center mt-3">
@@ -81,6 +79,12 @@ const HomePage = props => {
                       Complete
                     </Col>
                   </Row>
+                </Card>
+                <Card body className="mb-2">
+                  <Card.Title>TOTAL EARNINGS</Card.Title>
+                  <h1>$69,420</h1>
+                  <p class="text-muted">Last month you earned $1,337</p>
+                  <Image fluid src="/chart.jpg" />
                 </Card>
               </Col>
             </Row>
