@@ -9,7 +9,13 @@ const HomePage = props => {
       <Jumbotron>
         <Container>
           <h1>Find your next job.</h1>
-          <Form.Control type="text" placeholder="Search for services" />
+          <Form.Control
+            type="text"
+            placeholder="Search for services"
+            onKeyDown={e => {
+              if (e.keyCode === 13) window.location = "#/search";
+            }}
+          />
         </Container>
       </Jumbotron>
     </React.Fragment>

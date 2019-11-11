@@ -24,6 +24,9 @@ const TopNav = props => {
               <Form.Control
                 type="text"
                 placeholder="Search for jobs and services"
+                onKeyDown={e => {
+                  if (e.keyCode === 13) window.location = "#/search";
+                }}
               />
             )}
           </Nav>

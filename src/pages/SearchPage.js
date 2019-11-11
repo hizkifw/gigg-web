@@ -18,9 +18,13 @@ const titleList = [
   "Create a concept art for my next video game",
   "Need a sound engineer to mix my tracks",
   "Help me edit videos for my YouTube channel",
-  "Urgently need a translator for my comic",
+  "Urgently need a translator for my fanfiction",
+  "Looking for a professional guitarist to join my death metal band",
+  "Looking for a business partner for my MLM",
   "I need someone to finish my CSIT226 project for me",
-  "Please feed my goldfish while I'm away"
+  "Need someone to pretend to be my girlfriend",
+  "Please feed my goldfish while I'm away",
+  "Need a babysitter to sit on my babies"
 ];
 
 const SearchPage = props => {
