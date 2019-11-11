@@ -52,7 +52,7 @@ const SearchPage = props => {
             </Pagination>
             {Array.from(Array(10).keys()).map(n => (
               <Row className="border-bottom py-3">
-                <Col md={2}>
+                <Col md={2} sm={4} className="text-center">
                   <Image
                     roundedCircle
                     fluid
@@ -63,7 +63,7 @@ const SearchPage = props => {
                     }}
                   />
                 </Col>
-                <Col>
+                <Col sm={8}>
                   <p className="mb-1">
                     {titleList[Math.floor(Math.random() * titleList.length)]}
                   </p>
@@ -74,9 +74,23 @@ const SearchPage = props => {
                     sit amet.
                   </p>
                 </Col>
-                <Col md={2}>
-                  <p className="mb-0 text-muted">Budget</p>
-                  <h2>{`$${Math.ceil(Math.random() * 100)}`}</h2>
+                <Col sm={4} className="d-md-none" />
+                <Col md={2} sm={8}>
+                  <div className="d-md-block d-sm-inline-block d-xs-inline-block mx-2">
+                    <p className="mb-0 text-muted">Offers</p>
+                    <h2>{`${Math.floor(Math.random() * 20)}`}</h2>
+                  </div>
+                  <div className="d-md-block d-sm-inline-block d-xs-inline-block mx-2">
+                    <p className="mb-0 text-muted">Budget</p>
+                    <h2>{`$${Math.ceil(Math.random() * 100)}`}</h2>
+                  </div>
+                </Col>
+                <Col sm={4} md={2} />
+                <Col sm={8} md={10} lg={10}>
+                  <a href="#" className="mr-2 pr-2 border-right">
+                    View details
+                  </a>
+                  <a href="#">Send offer</a>
                 </Col>
               </Row>
             ))}
