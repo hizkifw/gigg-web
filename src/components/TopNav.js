@@ -33,11 +33,13 @@ const TopNav = props => {
           <Nav className="float-right">
             {props.loggedIn ? (
               <React.Fragment>
-                <Image
-                  roundedCircle
-                  src="/zuck.jpg"
-                  style={{ height: "40px", width: "40px" }}
-                />
+                <a href="#/dash/freelance">
+                  <Image
+                    roundedCircle
+                    src="/zuck.jpg"
+                    style={{ height: "40px", width: "40px" }}
+                  />
+                </a>
               </React.Fragment>
             ) : (
               <React.Fragment>
