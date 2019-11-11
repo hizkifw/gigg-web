@@ -8,86 +8,101 @@ const HomePage = props => {
       <TopNav loggedIn />
       <Container className="mt-4">
         <Row>
-          <Col lg={3} sm={12} className="border">
-            <Row className="mt-3">
-              <Col>
-                <Image
-                  roundedCircle
-                  fluid
-                  className="d-block"
-                  src="/zuck.jpg"
-                />
-              </Col>
-              <Col>
-                <p className="mb-1">Joe Succerberg</p>
-                <a href="#/profile">Profile</a>
-              </Col>
-            </Row>
-            <hr />
-            <Nav className="flex-column">
-              <Nav.Link className="font-weight-bold">DASHBOARD</Nav.Link>
-              <Nav className="flex-column ml-4">
-                <Nav.Link>Overview</Nav.Link>
-                <Nav.Link>Performance</Nav.Link>
-                <Nav.Link>Analytics</Nav.Link>
-                <Nav.Link>Projects</Nav.Link>
+          <Col lg={3} md={3} sm={12}>
+            <Card body>
+              <Row className="mt-3">
+                <Col>
+                  <Image
+                    roundedCircle
+                    fluid
+                    className="d-block"
+                    src="/zuck.jpg"
+                  />
+                </Col>
+                <Col>
+                  <p className="mb-1">Joe Succerberg</p>
+                  <a href="#/">Logout</a>
+                </Col>
+              </Row>
+              <hr />
+              <Nav className="flex-column">
+                <Nav.Link className="font-weight-bold">DASHBOARD</Nav.Link>
+                <Nav className="flex-column ml-4">
+                  <Nav.Link>Overview</Nav.Link>
+                  <Nav.Link>Performance</Nav.Link>
+                  <Nav.Link>Analytics</Nav.Link>
+                  <Nav.Link>Projects</Nav.Link>
+                </Nav>
+                <Nav.Link className="font-weight-bold">APPS</Nav.Link>
+                <Nav className="flex-column ml-4">
+                  <Nav.Link>Calendar</Nav.Link>
+                  <Nav.Link>Messages</Nav.Link>
+                  <Nav.Link>Projects Board</Nav.Link>
+                </Nav>
+                <Nav.Link className="font-weight-bold">PAGES</Nav.Link>
+                <Nav className="flex-column ml-4">
+                  <Nav.Link>User Profile</Nav.Link>
+                  <Nav.Link>Invoices</Nav.Link>
+                </Nav>
               </Nav>
-              <Nav.Link className="font-weight-bold">APPS</Nav.Link>
-              <Nav className="flex-column ml-4">
-                <Nav.Link>Calendar</Nav.Link>
-                <Nav.Link>Messages</Nav.Link>
-                <Nav.Link>Projects Board</Nav.Link>
-              </Nav>
-              <Nav.Link className="font-weight-bold">PAGES</Nav.Link>
-              <Nav className="flex-column ml-4">
-                <Nav.Link>User Profile</Nav.Link>
-                <Nav.Link>Invoices</Nav.Link>
-              </Nav>
-            </Nav>
+            </Card>
           </Col>
           <Col>
-            <Row>
-              <Col>
-                <Card body className="mb-2">
-                  <h1 className="d-inline align-middle mr-3 pr-3 border-right">
-                    43
-                  </h1>
-                  Pending orders
-                </Card>
-                <Card body className="mb-2">
-                  <h1 className="d-inline align-middle mr-3 pr-3 border-right">
-                    10
-                  </h1>
-                  Unread messages
-                </Card>
-              </Col>
-              <Col>
-                <Card body className="mb-2">
-                  <Card.Title>STATISTICS</Card.Title>
-                  <Image fluid src="/chart2.png" />
-                  <Row className="text-center mt-3">
-                    <Col>
-                      <h2>3</h2>
-                      In progress
-                    </Col>
-                    <Col>
-                      <h2>1</h2>
-                      Due
-                    </Col>
-                    <Col>
-                      <h2>4</h2>
-                      Complete
-                    </Col>
-                  </Row>
-                </Card>
-                <Card body className="mb-2">
-                  <Card.Title>TOTAL EARNINGS</Card.Title>
-                  <h1>$69,420</h1>
-                  <p class="text-muted">Last month you earned $1,337</p>
-                  <Image fluid src="/chart.jpg" />
-                </Card>
-              </Col>
-            </Row>
+            <Card body className="mb-2">
+              <h1 className="d-inline align-middle mr-3 pr-3 border-right">
+                43
+              </h1>
+              Pending orders
+            </Card>
+            <Card body className="mb-2">
+              <h1 className="d-inline align-middle mr-3 pr-3 border-right">
+                10
+              </h1>
+              Unread messages
+            </Card>
+            <Card className="mb-2">
+              <Card.Img variant="top" src="/gig-thumbnail-1.jpg" />
+              <Card.Body>
+                <Card.Title>Create a website for my company</Card.Title>
+                <Row className="mb-4">
+                  <Col>
+                    <p className="text-muted mb-0">Budget</p>
+                    <strong>4,750 USD</strong>
+                  </Col>
+                  <Col>
+                    <p className="text-muted mb-0">Deadline</p>
+                    <strong>31 Nov 2019</strong>
+                  </Col>
+                </Row>
+                <Card.Link href="#">View details</Card.Link>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card body className="mb-2">
+              <Card.Title>STATISTICS</Card.Title>
+              <Image fluid src="/chart2.png" />
+              <Row className="text-center mt-3">
+                <Col>
+                  <h2>3</h2>
+                  In progress
+                </Col>
+                <Col>
+                  <h2>1</h2>
+                  Due
+                </Col>
+                <Col>
+                  <h2>4</h2>
+                  Complete
+                </Col>
+              </Row>
+            </Card>
+            <Card body className="mb-2">
+              <Card.Title>TOTAL EARNINGS</Card.Title>
+              <h1>$69,420</h1>
+              <p class="text-muted">Last month you earned $1,337</p>
+              <Image fluid src="/chart.jpg" />
+            </Card>
           </Col>
         </Row>
       </Container>
