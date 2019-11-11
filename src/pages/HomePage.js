@@ -1,9 +1,11 @@
 import React from "react";
+import TopNav from "../components/TopNav";
 import { Container, Form, Jumbotron } from "react-bootstrap";
 
 const HomePage = props => {
   return (
     <React.Fragment>
+      <TopNav noSearch />
       <Jumbotron>
         <Container>
           <h1>Find your next job.</h1>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TopNav from "../components/TopNav";
 import {
   Button,
   Breadcrumb,
@@ -13,6 +14,7 @@ const HomePage = props => {
   const [step, setStep] = useState(0);
   return (
     <React.Fragment>
+      <TopNav />
       <Container>
         <Row className="mt-4">
           <Col />

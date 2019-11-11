@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TopNav from "../components/TopNav";
 import {
   Button,
   Card,
@@ -20,6 +21,7 @@ const HomePage = props => {
 
   return (
     <React.Fragment>
+      <TopNav />
       <Container>
         <Row className="mt-4">
           <Col />
