@@ -56,11 +56,9 @@ const SearchPage = props => {
                   <Image
                     roundedCircle
                     fluid
-                    src="320px.png"
-                    style={{
-                      backgroundColor:
-                        "#" + Math.floor(Math.random() * 16777215).toString(16)
-                    }}
+                    src={`/gig-thumbnail-${Math.ceil(
+                      Math.random() * 7
+                    )}-square.jpg`}
                   />
                 </Col>
                 <Col sm={8}>
