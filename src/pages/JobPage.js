@@ -51,12 +51,18 @@ const JobPage = props => {
               <Row>
                 <Col md={3} />
                 <Col md={6}>
-                  <Image roundedCircle fluid src={JobUtil.randomImage()} />
+                  <Image
+                    roundedCircle
+                    fluid
+                    src={JobUtil.randomProfilePicture()}
+                  />
                 </Col>
               </Row>
               <Row>
                 <Col className="text-center">
-                  <p className="mt-2">{JobUtil.randomName()}</p>
+                  <p className="mt-2" style={{ fontSize: "1.5em" }}>
+                    {JobUtil.randomName()}
+                  </p>
                 </Col>
               </Row>
             </Card>

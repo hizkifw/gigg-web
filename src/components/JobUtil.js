@@ -50,5 +50,7 @@ JobUtil.randomImage = () =>
   `/gig-thumbnail-${Math.ceil(Math.random() * 7)}-square.jpg`;
 JobUtil.randomName = () =>
   JobUtil.nameList[Math.floor(Math.random() * JobUtil.nameList.length)];
+JobUtil.randomProfilePicture = () =>
+  `/person-${Math.ceil(Math.random() * 4)}.jpg`;
 
 export default JobUtil;
