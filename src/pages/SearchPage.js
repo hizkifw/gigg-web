@@ -33,21 +33,23 @@ const SearchPage = props => {
       <TopNav loggedIn />
       <Container className="mt-4">
         <Row>
-          <Col>
-            <Pagination>
-              {Array.from(Array(10).keys()).map(n => (
-                <Pagination.Item>{n + 1}</Pagination.Item>
-              ))}
-            </Pagination>
-          </Col>
-        </Row>
-        <Row>
           <Col lg={3} md={3} sm={12}>
             <Card body>
               <Card.Title>Filters</Card.Title>
             </Card>
           </Col>
           <Col>
+            <Pagination>
+              <Pagination.First href="#/search/0" />
+              <Pagination.Prev href="#/search/0" />
+              {Array.from(Array(10).keys()).map(n => (
+                <Pagination.Item href={`#/search/${n + 1}`}>
+                  {n + 1}
+                </Pagination.Item>
+              ))}
+              <Pagination.Next href="#/search/99" />
+              <Pagination.Last href="#/search/99" />
+            </Pagination>
             {Array.from(Array(10).keys()).map(n => (
               <Row className="border-bottom py-3">
                 <Col md={2}>
@@ -73,6 +75,7 @@ const SearchPage = props => {
                   </p>
                 </Col>
                 <Col md={2}>
+                  <p className="mb-0 text-muted">Budget</p>
                   <h2>{`$${Math.ceil(Math.random() * 100)}`}</h2>
                 </Col>
               </Row>
