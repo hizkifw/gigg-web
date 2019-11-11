@@ -1,5 +1,6 @@
 import React from "react";
 import TopNav from "../components/TopNav";
+import JobUtil from "../components/JobUtil";
 import {
   Card,
   Container,
@@ -10,22 +11,6 @@ import {
   Col,
   Nav
 } from "react-bootstrap";
-
-const titleList = [
-  "Help me design a website",
-  "I need a logo for my company",
-  "Voice acting for a YouTube video",
-  "Create a concept art for my next video game",
-  "Need a sound engineer to mix my tracks",
-  "Help me edit videos for my YouTube channel",
-  "Urgently need a translator for my fanfiction",
-  "Looking for a professional guitarist to join my death metal band",
-  "Looking for a business partner for my MLM",
-  "I need someone to finish my CSIT226 project for me",
-  "Need someone to pretend to be my girlfriend",
-  "Please feed my goldfish while I'm away",
-  "Need a babysitter to sit on my babies"
-];
 
 const SearchPage = props => {
   return (
@@ -53,19 +38,15 @@ const SearchPage = props => {
             {Array.from(Array(10).keys()).map(n => (
               <Row className="border-bottom py-3">
                 <Col md={2} sm={4} className="text-center">
-                  <Image
-                    roundedCircle
-                    fluid
-                    src={`/gig-thumbnail-${Math.ceil(
-                      Math.random() * 7
-                    )}-square.jpg`}
-                  />
+                  <a href="#/job">
+                    <Image roundedCircle fluid src={JobUtil.randomImage()} />
+                  </a>
                 </Col>
                 <Col sm={8}>
-                  <p className="mb-1">
-                    {titleList[Math.floor(Math.random() * titleList.length)]}
-                  </p>
-                  <p className="text-muted">
+                  <a className="d-block" href="#/job">
+                    {JobUtil.randomTitle()}
+                  </a>
+                  <p className="text-muted mt-1">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Aenean ullamcorper ullamcorper massa at placerat.
                     Pellentesque dapibus lorem mi, vitae vestibulum ex posuere
@@ -85,10 +66,10 @@ const SearchPage = props => {
                 </Col>
                 <Col sm={4} md={2} />
                 <Col sm={8} md={10} lg={10}>
-                  <a href="#" className="mr-2 pr-2 border-right">
+                  <a href="#/job" className="mr-2 pr-2 border-right">
                     View details
                   </a>
-                  <a href="#">Send offer</a>
+                  <a href="#/job">Send offer</a>
                 </Col>
               </Row>
             ))}
