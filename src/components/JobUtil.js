@@ -43,6 +43,17 @@ JobUtil.nameList = [
   "Yakov",
   "Zoey"
 ];
+JobUtil.locationList = [
+  "Jakarta, Indonesia",
+  "Singapore",
+  "Dubai, UAE",
+  "North Korea",
+  "Tokyo, Japan",
+  "Copenhagen, Denmark",
+  "Beijing, China",
+  "Mumbai, India",
+  "Taipei, Taiwan"
+];
 
 JobUtil.randomTitle = () =>
   JobUtil.titleList[Math.floor(Math.random() * JobUtil.titleList.length)];
@@ -52,5 +63,7 @@ JobUtil.randomName = () =>
   JobUtil.nameList[Math.floor(Math.random() * JobUtil.nameList.length)];
 JobUtil.randomProfilePicture = () =>
   `/person-${Math.ceil(Math.random() * 4)}.jpg`;
+JobUtil.randomLocation = () =>
+  JobUtil.locationList[Math.floor(Math.random() * JobUtil.locationList.length)];
 
 export default JobUtil;

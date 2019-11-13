@@ -12,6 +12,18 @@ import {
   Nav
 } from "react-bootstrap";
 
+const SearchPagination = props => (
+  <Pagination style={{ justifyContent: "center" }}>
+    <Pagination.First href="#/search/0" />
+    <Pagination.Prev href="#/search/0" />
+    {Array.from(Array(10).keys()).map(n => (
+      <Pagination.Item href={`#/search/${n + 1}`}>{n + 1}</Pagination.Item>
+    ))}
+    <Pagination.Next href="#/search/99" />
+    <Pagination.Last href="#/search/99" />
+  </Pagination>
+);
+
 const SearchPage = props => {
   return (
     <React.Fragment>
@@ -24,17 +36,7 @@ const SearchPage = props => {
             </Card>
           </Col>
           <Col>
-            <Pagination>
-              <Pagination.First href="#/search/0" />
-              <Pagination.Prev href="#/search/0" />
-              {Array.from(Array(10).keys()).map(n => (
-                <Pagination.Item href={`#/search/${n + 1}`}>
-                  {n + 1}
-                </Pagination.Item>
-              ))}
-              <Pagination.Next href="#/search/99" />
-              <Pagination.Last href="#/search/99" />
-            </Pagination>
+            <SearchPagination />
             {Array.from(Array(10).keys()).map(n => (
               <Row className="border-bottom py-3">
                 <Col md={2} sm={4} className="text-center">
@@ -73,6 +75,7 @@ const SearchPage = props => {
                 </Col>
               </Row>
             ))}
+            <SearchPagination />
           </Col>
         </Row>
       </Container>
