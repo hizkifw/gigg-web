@@ -78,15 +78,21 @@ JobUtil.messageArray = [
     "I'm not sure I'm a real person. Are you?"
   ],
   [
-    "Some things in this universe are best left unanswered.",
-    "Sometimes we needn't know the ansers to everything.",
-    "There are just some things that science can't quantify."
+    "Some things in this universe are best left unanswered",
+    "Sometimes we needn't know the ansers to everything",
+    "There are just some things that science can't quantify"
   ],
   [
-    "You sure are an interesting person.",
-    "Well that answers it.",
-    "I'm not sure if I feel enlightened or confused.",
-    "Your words astound me."
+    "You sure are an interesting person",
+    "Well that answers it",
+    "I'm not sure if I feel enlightened or confused",
+    "Your words astound me"
+  ],
+  [
+    "I'm flattered",
+    "I'm no scientist but thank you",
+    "Well that's nice of you",
+    "I'm honored"
   ]
 ];
 

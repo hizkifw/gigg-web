@@ -68,9 +68,9 @@ const ChatPage = props => {
                 </a>
               ))}
             </Col>
-            <Col>
+            <Col style={{ display: "flex", flexDirection: "column" }}>
               <Row>
-                <Col className="border-bottom pb-3 pl-4">
+                <Col className="border-bottom pb-3 pl-4 mb-3">
                   <Image
                     roundedCircle
                     style={{ height: "3em" }}
@@ -85,7 +85,7 @@ const ChatPage = props => {
                   </p>
                 </Col>
               </Row>
-              <Row>
+              <Row style={{ flexGrow: "1" }}>
                 <Col>
                   {JobUtil.randomMessageArray().map((message, index) => (
                     <ChatBubble primary={index % 2 == 1}>{message}</ChatBubble>
