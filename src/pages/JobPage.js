@@ -72,7 +72,7 @@ const JobPage = props => {
                 </div>
 
                 <h5>Deadline</h5>
-                <p>Next year</p>
+                <p>{JobUtil.randomDeadline().toDateString()}</p>
               </Col>
             </Row>
           </Col>
@@ -110,7 +110,7 @@ const JobPage = props => {
               </Row>
               <Row>
                 <Col className="text-center mt-3">
-                  <Button variant="primary">
+                  <Button variant="primary" href="#/chat">
                     <i class="fas fa-comment mr-1"></i> Contact
                   </Button>
                 </Col>

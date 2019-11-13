@@ -55,6 +55,41 @@ JobUtil.locationList = [
   "Taipei, Taiwan"
 ];
 
+JobUtil.messageArray = [
+  [
+    "Hello! I just saw your listing and got interested. Can I ask you a few questions?",
+    "Hey there! I'd like to know more about your gigs!",
+    "Hey, are you online right now? I want to inquire about your listings.",
+    "Hello, I wanna ask a few questions.",
+    "Hi, can I ask you some things?",
+    "Your profile looks great! Can I ask a few things about you?"
+  ],
+  [
+    "Yeah, sure! What would you like to know?",
+    "Definitely. What do you wish to know?",
+    "Feel free to ask!"
+  ],
+  [
+    "What's your favourite color?",
+    "Why is the sky blue?",
+    "Why do I exist? Who am I?",
+    "Do you believe that we're all living in a simulation right now?",
+    "Is the earth actually flat?",
+    "I'm not sure I'm a real person. Are you?"
+  ],
+  [
+    "Some things in this universe are best left unanswered.",
+    "Sometimes we needn't know the ansers to everything.",
+    "There are just some things that science can't quantify."
+  ],
+  [
+    "You sure are an interesting person.",
+    "Well that answers it.",
+    "I'm not sure if I feel enlightened or confused.",
+    "Your words astound me."
+  ]
+];
+
 JobUtil.randomTitle = () =>
   JobUtil.titleList[Math.floor(Math.random() * JobUtil.titleList.length)];
 JobUtil.randomImage = () =>
@@ -65,5 +100,9 @@ JobUtil.randomProfilePicture = () =>
   `/person-${Math.ceil(Math.random() * 4)}.jpg`;
 JobUtil.randomLocation = () =>
   JobUtil.locationList[Math.floor(Math.random() * JobUtil.locationList.length)];
+JobUtil.randomDeadline = () =>
+  new Date(new Date().getTime() + Math.random() * 1000 * 3600 * 24 * 31);
+JobUtil.randomMessageArray = () =>
+  JobUtil.messageArray.map(arr => arr[Math.floor(Math.random() * arr.length)]);
 
 export default JobUtil;

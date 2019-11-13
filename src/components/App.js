@@ -17,6 +17,7 @@ import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import SearchPage from "../pages/SearchPage";
 import JobPage from "../pages/JobPage";
+import ChatPage from "../pages/ChatPage";
 
 import FreelanceDashboard from "../pages/FreelanceDashboard";
 
@@ -29,6 +30,7 @@ const App = () => {
       <Route path="/dash/freelance" component={FreelanceDashboard} />
       <Route path="/search" component={SearchPage} />
       <Route path="/job" component={JobPage} />
+      <Route path="/chat" component={ChatPage} />
     </HashRouter>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import TopNav from "../components/TopNav";
+import JobUtil from "../components/JobUtil";
 import { Card, Container, Form, Image, Row, Col, Nav } from "react-bootstrap";
 
 const HomePage = props => {
@@ -36,7 +37,7 @@ const HomePage = props => {
                 <Nav.Link className="font-weight-bold">APPS</Nav.Link>
                 <Nav className="flex-column ml-4">
                   <Nav.Link>Calendar</Nav.Link>
-                  <Nav.Link>Messages</Nav.Link>
+                  <Nav.Link href="#/chat">Messages</Nav.Link>
                   <Nav.Link>Projects Board</Nav.Link>
                 </Nav>
                 <Nav.Link className="font-weight-bold">PAGES</Nav.Link>
@@ -48,33 +49,45 @@ const HomePage = props => {
             </Card>
           </Col>
           <Col>
-            <Card body className="mb-2">
-              <h1 className="d-inline align-middle mr-3 pr-3 border-right">
-                43
-              </h1>
-              Pending orders
-            </Card>
-            <Card body className="mb-2">
-              <h1 className="d-inline align-middle mr-3 pr-3 border-right">
-                10
-              </h1>
-              Unread messages
-            </Card>
+            <a
+              href="#/chat"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <Card body className="mb-2">
+                <h1 className="d-inline align-middle mr-3 pr-3 border-right">
+                  43
+                </h1>
+                Pending orders
+              </Card>
+            </a>
+            <a
+              href="#/chat"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <Card body className="mb-2">
+                <h1 className="d-inline align-middle mr-3 pr-3 border-right">
+                  10
+                </h1>
+                Unread messages
+              </Card>
+            </a>
             <Card className="mb-2">
               <Card.Img variant="top" src="/gig-thumbnail-1.jpg" />
               <Card.Body>
-                <Card.Title>Create a website for my company</Card.Title>
+                <Card.Title>{JobUtil.randomTitle()}</Card.Title>
                 <Row className="mb-4">
                   <Col>
                     <p className="text-muted mb-0">Budget</p>
-                    <strong>4,750 USD</strong>
+                    <strong>{`$${Math.ceil(Math.random() * 999)}`}</strong>
                   </Col>
                   <Col>
                     <p className="text-muted mb-0">Deadline</p>
-                    <strong>31 Nov 2019</strong>
+                    <strong>{JobUtil.randomDeadline().toDateString()}</strong>
                   </Col>
                 </Row>
-                <Card.Link href="#">View details</Card.Link>
+                <Card.Link href="#/job">View details</Card.Link>
               </Card.Body>
             </Card>
           </Col>
