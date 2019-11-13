@@ -79,7 +79,7 @@ JobUtil.messageArray = [
   ],
   [
     "Some things in this universe are best left unanswered",
-    "Sometimes we needn't know the ansers to everything",
+    "Sometimes we needn't know the answers to everything",
     "There are just some things that science can't quantify"
   ],
   [
