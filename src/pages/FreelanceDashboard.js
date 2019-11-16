@@ -1,9 +1,18 @@
 import React from "react";
 import TopNav from "../components/TopNav";
 import JobUtil from "../components/JobUtil";
-import { Card, Container, Form, Image, Row, Col, Nav } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Container,
+  Form,
+  Image,
+  Row,
+  Col,
+  Nav
+} from "react-bootstrap";
 
-const HomePage = props => {
+const FreelanceDashboard = props => {
   return (
     <React.Fragment>
       <TopNav loggedIn />
@@ -22,10 +31,15 @@ const HomePage = props => {
                 </Col>
                 <Col>
                   <p className="mb-1">Joe Succerberg</p>
-                  <a href="#/">Logout</a>
                 </Col>
               </Row>
-              <hr />
+              <Row>
+                <Col className="mt-3 mb-2">
+                  <Button block variant="primary" href="#/dash/employ">
+                    Employer mode
+                  </Button>
+                </Col>
+              </Row>
               <Nav className="flex-column">
                 <Nav.Link className="font-weight-bold">DASHBOARD</Nav.Link>
                 <Nav className="flex-column ml-4">
@@ -123,4 +137,4 @@ const HomePage = props => {
   );
 };
 
-export default HomePage;
+export default FreelanceDashboard;

@@ -20,6 +20,7 @@ import JobPage from "../pages/JobPage";
 import ChatPage from "../pages/ChatPage";
 
 import FreelanceDashboard from "../pages/FreelanceDashboard";
+import EmployerDashboard from "../pages/EmployerDashboard";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
       <Route path="/login" component={LoginPage} />
       <Route path="/register" component={RegisterPage} />
       <Route path="/dash/freelance" component={FreelanceDashboard} />
+      <Route path="/dash/employ" component={EmployerDashboard} />
       <Route path="/search" component={SearchPage} />
       <Route path="/job" component={JobPage} />
       <Route path="/chat" component={ChatPage} />
