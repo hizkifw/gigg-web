@@ -63,73 +63,91 @@ const FreelanceDashboard = props => {
             </Card>
           </Col>
           <Col>
-            <a
-              href="#/chat"
-              className="text-dark"
-              style={{ textDecoration: "none" }}
-            >
-              <Card body className="mb-2">
-                <h1 className="d-inline align-middle mr-3 pr-3 border-right">
-                  43
-                </h1>
-                Pending orders
-              </Card>
-            </a>
-            <a
-              href="#/chat"
-              className="text-dark"
-              style={{ textDecoration: "none" }}
-            >
-              <Card body className="mb-2">
-                <h1 className="d-inline align-middle mr-3 pr-3 border-right">
-                  {Math.floor(Math.random() * 10)}
-                </h1>
-                Unread messages
-              </Card>
-            </a>
-            <Card className="mb-2">
-              <Card.Img variant="top" src="/gig-thumbnail-1.jpg" />
-              <Card.Body>
-                <Card.Title>{JobUtil.randomTitle()}</Card.Title>
-                <Row className="mb-4">
-                  <Col>
-                    <p className="text-muted mb-0">Budget</p>
-                    <strong>{`$${Math.ceil(Math.random() * 999)}`}</strong>
-                  </Col>
-                  <Col>
-                    <p className="text-muted mb-0">Deadline</p>
-                    <strong>{JobUtil.randomDeadline().toDateString()}</strong>
-                  </Col>
-                </Row>
-                <Card.Link href="#/job">View details</Card.Link>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-            <Card body className="mb-2">
-              <Card.Title>STATISTICS</Card.Title>
-              <Image fluid src="/chart2.png" />
-              <Row className="text-center mt-3">
-                <Col>
-                  <h2>3</h2>
-                  In progress
-                </Col>
-                <Col>
-                  <h2>1</h2>
-                  Due
-                </Col>
-                <Col>
-                  <h2>4</h2>
-                  Complete
-                </Col>
-              </Row>
-            </Card>
-            <Card body className="mb-2">
-              <Card.Title>TOTAL EARNINGS</Card.Title>
-              <h1>$69,420</h1>
-              <p class="text-muted">Last month you earned $1,337</p>
-              <Image fluid src="/chart.jpg" />
-            </Card>
+            <Row>
+              <Col>
+                <a
+                  href="#/new/gig"
+                  className="text-dark"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Card body className="mb-2">
+                    <h1 className="d-inline align-middle mr-3 pr-3 border-right">
+                      +
+                    </h1>
+                    Post a gig
+                  </Card>
+                </a>
+                <a
+                  href="#/chat"
+                  className="text-dark"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Card body className="mb-2">
+                    <h1 className="d-inline align-middle mr-3 pr-3 border-right">
+                      43
+                    </h1>
+                    Pending orders
+                  </Card>
+                </a>
+                <a
+                  href="#/chat"
+                  className="text-dark"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Card body className="mb-2">
+                    <h1 className="d-inline align-middle mr-3 pr-3 border-right">
+                      {Math.floor(Math.random() * 10)}
+                    </h1>
+                    Unread messages
+                  </Card>
+                </a>
+                <Card className="mb-2">
+                  <Card.Img variant="top" src="/gig-thumbnail-1.jpg" />
+                  <Card.Body>
+                    <Card.Title>{JobUtil.randomTitle()}</Card.Title>
+                    <Row className="mb-4">
+                      <Col>
+                        <p className="text-muted mb-0">Budget</p>
+                        <strong>{`$${Math.ceil(Math.random() * 999)}`}</strong>
+                      </Col>
+                      <Col>
+                        <p className="text-muted mb-0">Deadline</p>
+                        <strong>
+                          {JobUtil.randomDeadline().toDateString()}
+                        </strong>
+                      </Col>
+                    </Row>
+                    <Card.Link href="#/job">View details</Card.Link>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card body className="mb-2">
+                  <Card.Title>STATISTICS</Card.Title>
+                  <Image fluid src="/chart2.png" />
+                  <Row className="text-center mt-3">
+                    <Col>
+                      <h2>3</h2>
+                      In progress
+                    </Col>
+                    <Col>
+                      <h2>1</h2>
+                      Due
+                    </Col>
+                    <Col>
+                      <h2>4</h2>
+                      Complete
+                    </Col>
+                  </Row>
+                </Card>
+                <Card body className="mb-2">
+                  <Card.Title>TOTAL EARNINGS</Card.Title>
+                  <h1>$69,420</h1>
+                  <p class="text-muted">Last month you earned $1,337</p>
+                  <Image fluid src="/chart.jpg" />
+                </Card>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Container>

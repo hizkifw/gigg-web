@@ -67,6 +67,18 @@ const EmployerDashboard = props => {
             <Row>
               <Col md={8}>
                 <a
+                  href="#/new/gig"
+                  className="text-dark"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Card body className="mb-2">
+                    <h1 className="d-inline align-middle mr-3 pr-3 border-right">
+                      +
+                    </h1>
+                    Post a job
+                  </Card>
+                </a>
+                <a
                   href="#/chat"
                   className="text-dark"
                   style={{ textDecoration: "none" }}
