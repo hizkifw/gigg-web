@@ -15,7 +15,13 @@ const TopNav = props => {
   return (
     <Navbar bg="light" expand="md">
       <Container>
-        <Navbar.Brand href="#/">gigg</Navbar.Brand>
+        <Navbar.Brand href="#/">
+          <Image
+            fluid
+            src="logo-white-transparent.png"
+            style={{ maxHeight: "27px", filter: "brightness(0.5)" }}
+          />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto" style={{ width: "75%" }}>
