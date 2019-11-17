@@ -3,6 +3,7 @@ import {
   Button,
   Image,
   Container,
+  Dropdown,
   Nav,
   Navbar,
   NavDropdown,
@@ -36,13 +37,35 @@ const TopNav = props => {
           <Nav className="float-right">
             {props.loggedIn ? (
               <React.Fragment>
-                <a href="#/dash/freelance">
-                  <Image
-                    roundedCircle
-                    src="/zuck.jpg"
-                    style={{ height: "40px", width: "40px" }}
-                  />
-                </a>
+                <Dropdown as={Nav.Item}>
+                  <Dropdown.Toggle as={Nav.Link} className="py-0">
+                    <Image
+                      roundedCircle
+                      src="/zuck.jpg"
+                      style={{ height: "40px", width: "40px" }}
+                    />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item
+                      href={`#/dash/${
+                        props.freelancer ? "freelance" : "employ"
+                      }`}
+                    >
+                      Dashboard
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      href={`#/dash/${
+                        props.freelancer ? "employ" : "freelance"
+                      }`}
+                    >
+                      Switch to {props.freelancer ? "Employing" : "Freelancing"}
+                    </Dropdown.Item>
+                    <Dropdown.Divider />
+                    <Dropdown.Item href="#/" className="text-danger">
+                      Logout
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </React.Fragment>
             ) : (
               <React.Fragment>
