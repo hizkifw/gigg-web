@@ -12,6 +12,7 @@ import {
 
 const HomePage = props => {
   const [step, setStep] = useState(0);
+  const [freelanceChecked, setFreelanceChecked] = useState(false);
   return (
     <React.Fragment>
       <TopNav />
@@ -28,9 +29,14 @@ const HomePage = props => {
                   <Breadcrumb.Item onClick={() => setStep(1)} active={step < 1}>
                     Personal Details
                   </Breadcrumb.Item>
-                  <Breadcrumb.Item onClick={() => setStep(2)} active={step < 2}>
-                    Upload Portfolio
-                  </Breadcrumb.Item>
+                  {freelanceChecked && (
+                    <Breadcrumb.Item
+                      onClick={() => setStep(2)}
+                      active={step < 2}
+                    >
+                      Upload Portfolio
+                    </Breadcrumb.Item>
+                  )}
                   <Breadcrumb.Item onClick={() => setStep(3)} active={step < 3}>
                     Done
                   </Breadcrumb.Item>
@@ -42,7 +48,11 @@ const HomePage = props => {
                         Get Started
                       </Card.Title>
                       <Form.Label>I'd like to...</Form.Label>
-                      <Form.Check label="Freelance" id="checkFreelance" />
+                      <Form.Check
+                        label="Freelance"
+                        id="checkFreelance"
+                        onChange={e => setFreelanceChecked(e.target.checked)}
+                      />
                       <Form.Check
                         type="checkbox"
                         label="Employ"
@@ -128,7 +138,11 @@ const HomePage = props => {
                       <Button
                         variant="primary"
                         block
-                        onClick={() => setStep(step + 1)}
+                        onClick={() => {
+                          if (!freelanceChecked && step === 1)
+                            setStep(step + 2);
+                          else setStep(step + 1);
+                        }}
                       >
                         Next
                       </Button>
