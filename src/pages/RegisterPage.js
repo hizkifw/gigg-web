@@ -49,11 +49,13 @@ const HomePage = props => {
                       </Card.Title>
                       <Form.Label>I'd like to...</Form.Label>
                       <Form.Check
+                        custom
                         label="Freelance"
                         id="checkFreelance"
                         onChange={e => setFreelanceChecked(e.target.checked)}
                       />
                       <Form.Check
+                        custom
                         type="checkbox"
                         label="Employ"
                         id="checkEmploy"

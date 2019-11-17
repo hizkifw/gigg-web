@@ -22,6 +22,8 @@ import ChatPage from "../pages/ChatPage";
 import FreelanceDashboard from "../pages/FreelanceDashboard";
 import EmployerDashboard from "../pages/EmployerDashboard";
 
+import Footer from "../components/Footer";
+
 const App = () => {
   return (
     <HashRouter>
@@ -34,6 +36,7 @@ const App = () => {
       <Route path="/search/gigs" component={SearchPage} />
       <Route path="/job" component={JobPage} />
       <Route path="/chat" component={ChatPage} />
+      <Footer />
     </HashRouter>
   );
 };

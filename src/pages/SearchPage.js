@@ -9,7 +9,8 @@ import {
   Image,
   Row,
   Col,
-  Nav
+  Nav,
+  InputGroup
 } from "react-bootstrap";
 
 const SearchPagination = props => {
@@ -38,6 +39,38 @@ const SearchPage = props => {
           <Col lg={3} md={3} sm={12}>
             <Card body>
               <Card.Title>Filters</Card.Title>
+              <Form>
+                <Form.Group>
+                  <Form.Label>Sort by</Form.Label>
+                  <Form.Control as="select">
+                    <option>Relevance</option>
+                    <option>Rating</option>
+                    <option>Newest first</option>
+                    <option>Oldest first</option>
+                    <option>Highest price</option>
+                    <option>Lowest price</option>
+                  </Form.Control>
+                </Form.Group>
+
+                <Form.Group>
+                  <Form.Label>Min. price</Form.Label>
+                  <InputGroup>
+                    <InputGroup.Prepend>
+                      <InputGroup.Text>$</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <Form.Control type="number" placeholder="0" />
+                  </InputGroup>
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label>Max. price</Form.Label>
+                  <InputGroup>
+                    <InputGroup.Prepend>
+                      <InputGroup.Text>$</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <Form.Control type="number" placeholder="999" />
+                  </InputGroup>
+                </Form.Group>
+              </Form>
             </Card>
           </Col>
           <Col>
