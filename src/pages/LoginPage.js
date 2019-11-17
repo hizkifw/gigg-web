@@ -10,7 +10,7 @@ import {
   Spinner
 } from "react-bootstrap";
 
-const HomePage = props => {
+const LoginPage = props => {
   const [isLoading, setIsLoading] = useState(false);
   const btnLogin = () => {
     setIsLoading(true);
@@ -69,4 +69,4 @@ const HomePage = props => {
   );
 };
 
-export default HomePage;
+export default LoginPage;

@@ -67,7 +67,7 @@ const EmployerDashboard = props => {
             <Row>
               <Col md={8}>
                 <a
-                  href="#/new/gig"
+                  href="#/new/job"
                   className="text-dark"
                   style={{ textDecoration: "none" }}
                 >
