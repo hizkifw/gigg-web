@@ -36,7 +36,7 @@ const FreelanceDashboard = props => {
               <Row>
                 <Col className="mt-3 mb-2">
                   <Button block variant="primary" href="#/dash/employ">
-                    Employer mode
+                    Switch to Employer
                   </Button>
                 </Col>
               </Row>
@@ -82,7 +82,7 @@ const FreelanceDashboard = props => {
             >
               <Card body className="mb-2">
                 <h1 className="d-inline align-middle mr-3 pr-3 border-right">
-                  10
+                  {Math.floor(Math.random() * 10)}
                 </h1>
                 Unread messages
               </Card>

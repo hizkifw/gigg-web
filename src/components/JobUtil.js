@@ -26,6 +26,18 @@ JobUtil.gigList = [
   "I can mix your music tracks",
   "I can record a voice over for your videos"
 ];
+JobUtil.categoryList = [
+  "Software",
+  "Writing",
+  "Graphic design",
+  "Music",
+  "Linguistics",
+  "Audio",
+  "Video",
+  "Multimedia",
+  "Translation",
+  "Transcription"
+];
 JobUtil.nameList = [
   "Absalom",
   "Bernard",
@@ -111,6 +123,8 @@ JobUtil.randomTitle = () =>
   JobUtil.titleList[Math.floor(Math.random() * JobUtil.titleList.length)];
 JobUtil.randomGig = () =>
   JobUtil.gigList[Math.floor(Math.random() * JobUtil.gigList.length)];
+JobUtil.randomCategory = () =>
+  JobUtil.categoryList[Math.floor(Math.random() * JobUtil.categoryList.length)];
 JobUtil.randomImage = () =>
   `/gig-thumbnail-${Math.ceil(Math.random() * 7)}-square.jpg`;
 JobUtil.randomName = () =>

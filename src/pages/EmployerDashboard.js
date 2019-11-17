@@ -37,7 +37,7 @@ const EmployerDashboard = props => {
               <Row>
                 <Col className="mt-3 mb-2">
                   <Button block variant="primary" href="#/dash/freelance">
-                    Freelancer mode
+                    Switch to Freelancer
                   </Button>
                 </Col>
               </Row>
@@ -66,6 +66,18 @@ const EmployerDashboard = props => {
           <Col>
             <Row>
               <Col md={8}>
+                <a
+                  href="#/chat"
+                  className="text-dark"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Card body className="mb-2">
+                    <h1 className="d-inline align-middle mr-3 pr-3 border-right">
+                      {Math.floor(Math.random() * 10)}
+                    </h1>
+                    Unread messages
+                  </Card>
+                </a>
                 <Card body>
                   <Card.Title>Ongoing jobs</Card.Title>
                   {Array.from(Array(3).keys()).map(n => (
@@ -105,7 +117,7 @@ const EmployerDashboard = props => {
                   <Row>
                     {Array.from(Array(6).keys()).map(n => (
                       <Col md={6} className="mb-3 text-center">
-                        <a href="#/search">
+                        <a href="#/search/gigs">
                           <Image
                             fluid
                             roundedCircle
@@ -115,7 +127,7 @@ const EmployerDashboard = props => {
                             className="text-dark my-1"
                             style={{ fontSize: "1.2em" }}
                           >
-                            Category {n + 1}
+                            {JobUtil.randomCategory()}
                           </p>
                         </a>
                       </Col>
