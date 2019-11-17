@@ -1,7 +1,16 @@
 import React from "react";
 import TopNav from "../components/TopNav";
 import JobUtil from "../components/JobUtil";
-import { Container, Row, Col, Form, Jumbotron, Image } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Container,
+  Row,
+  Col,
+  Form,
+  Jumbotron,
+  Image
+} from "react-bootstrap";
 
 const HomePage = props => {
   return (
@@ -45,6 +54,41 @@ const HomePage = props => {
               </a>
             </Col>
           ))}
+        </Row>
+        <Row className="mt-4">
+          <Col>
+            <h3>What our users say</h3>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Card body>
+              <Row>
+                <Col md={1} />
+                <Col md={2}>
+                  <Image fluid rounded src={JobUtil.randomProfilePicture()} />
+                </Col>
+                <Col md={8}>
+                  <blockquote style={{ fontSize: "1.2em" }} className="mt-4">
+                    "Searching for jobs wasn't the easiest thing to do. But with
+                    the help of gigg, I was able to get myself a steady income
+                    with very little hassle."
+                  </blockquote>
+                  <p className="text-muted">&mdash;{JobUtil.randomName()}</p>
+                </Col>
+              </Row>
+            </Card>
+          </Col>
+        </Row>
+        <Row className="mt-4">
+          <Col>
+            <Jumbotron>
+              <h3>What are you waiting for?</h3>
+              <Button size="lg" variant="primary" href="#/register">
+                Get started
+              </Button>
+            </Jumbotron>
+          </Col>
         </Row>
       </Container>
     </React.Fragment>
