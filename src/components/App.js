@@ -35,6 +35,7 @@ const App = () => {
       <Route path="/search/jobs" component={() => <SearchPage freelancer />} />
       <Route path="/search/gigs" component={SearchPage} />
       <Route path="/job" component={JobPage} />
+      <Route path="/gig" component={() => <JobPage gig />} />
       <Route path="/chat" component={ChatPage} />
       <Footer />
     </HashRouter>

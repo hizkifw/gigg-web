@@ -20,7 +20,10 @@ const JobPage = props => {
       <Container className="mt-4">
         <Row className="mb-4">
           <Col>
-            <Button href="#/search/jobs" variant="outline-secondary">
+            <Button
+              href={`#/search/${props.gig ? "gigs" : "jobs"}`}
+              variant="outline-secondary"
+            >
               <i class="fas fa-chevron-left mr-2"></i>
               Back to search
             </Button>
@@ -37,13 +40,20 @@ const JobPage = props => {
                 <Row>
                   <Col>
                     <div className="d-inline-block mr-5">
-                      <p className="mb-0 text-muted">Budget</p>
+                      <p className="mb-0 text-muted">
+                        {props.gig ? "Asking" : "Budget"}
+                      </p>
                       <h2>{`$${Math.floor(Math.random() * 100)}`}</h2>
                     </div>
                     <div className="d-inline-block mr-5">
                       <p className="mb-0 text-muted">Offers</p>
                       <h2>{`${Math.floor(Math.random() * 20)}`}</h2>
                     </div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Button variant="primary">Send offer</Button>
                   </Col>
                 </Row>
               </Col>

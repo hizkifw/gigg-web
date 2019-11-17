@@ -79,12 +79,15 @@ const SearchPage = props => {
             {Array.from(Array(10).keys()).map(n => (
               <Row className="border-bottom py-3">
                 <Col md={2} sm={4} className="text-center">
-                  <a href="#/job">
+                  <a href={`#/${props.freelancer ? "job" : "gig"}`}>
                     <Image roundedCircle fluid src={JobUtil.randomImage()} />
                   </a>
                 </Col>
                 <Col sm={8}>
-                  <a className="d-block" href="#/job">
+                  <a
+                    className="d-block"
+                    href={`#/${props.freelancer ? "job" : "gig"}`}
+                  >
                     {props.freelancer
                       ? JobUtil.randomTitle()
                       : JobUtil.randomGig()}
@@ -113,10 +116,15 @@ const SearchPage = props => {
                 </Col>
                 <Col sm={4} md={2} />
                 <Col sm={8} md={10} lg={10}>
-                  <a href="#/job" className="mr-2 pr-2 border-right">
+                  <a
+                    href={`#/${props.freelancer ? "job" : "gig"}`}
+                    className="mr-2 pr-2 border-right"
+                  >
                     View details
                   </a>
-                  <a href="#/job">Send offer</a>
+                  <a href={`#/${props.freelancer ? "job" : "gig"}`}>
+                    Send offer
+                  </a>
                 </Col>
               </Row>
             ))}
