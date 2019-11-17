@@ -13,7 +13,7 @@ const HomePage = props => {
             type="text"
             placeholder="Search for services"
             onKeyDown={e => {
-              if (e.keyCode === 13) window.location = "#/search";
+              if (e.keyCode === 13) window.location = "#/search/jobs";
             }}
           />
         </Container>

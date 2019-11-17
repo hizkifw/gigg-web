@@ -9,7 +9,8 @@ import {
   Image,
   Row,
   Col,
-  Nav
+  Nav,
+  ProgressBar
 } from "react-bootstrap";
 
 const EmployerDashboard = props => {
@@ -64,21 +65,64 @@ const EmployerDashboard = props => {
           </Col>
           <Col>
             <Row>
-              <Col className="text-center mb-3">
-                <h3>Popular Categories</h3>
+              <Col md={8}>
+                <Card body>
+                  <Card.Title>Ongoing jobs</Card.Title>
+                  {Array.from(Array(3).keys()).map(n => (
+                    <Row className="my-3 align-middle">
+                      <Col md={2} className="px-0 pl-2">
+                        <Image
+                          roundedCircle
+                          fluid
+                          src={JobUtil.randomImage()}
+                        />
+                      </Col>
+                      <Col className="py-1 align-middle">
+                        <p className="my-0">{JobUtil.randomGig()}</p>
+                        <ProgressBar
+                          now={12 + Math.floor(Math.random() * 75)}
+                        />
+                        <p className="my-0 text-muted">
+                          {`in ${1 + Math.ceil(Math.random() * 6)} days`}
+                        </p>
+                      </Col>
+                      <Col md={2} className="align-middle">
+                        <Button
+                          block
+                          href="#/chat"
+                          variant="outline-primary align-middle"
+                        >
+                          <i className="fas fa-envelope"></i>
+                        </Button>
+                      </Col>
+                    </Row>
+                  ))}
+                </Card>
               </Col>
-            </Row>
-            <Row>
-              {Array.from(Array(6).keys()).map(n => (
-                <Col md={2} className="mb-3 text-center">
-                  <a href="#/search">
-                    <Image fluid roundedCircle src={JobUtil.randomImage()} />
-                    <p className="text-dark my-1" style={{ fontSize: "1.2em" }}>
-                      Category
-                    </p>
-                  </a>
-                </Col>
-              ))}
+              <Col>
+                <Card body>
+                  <Card.Title>Popular Categories</Card.Title>
+                  <Row>
+                    {Array.from(Array(6).keys()).map(n => (
+                      <Col md={6} className="mb-3 text-center">
+                        <a href="#/search">
+                          <Image
+                            fluid
+                            roundedCircle
+                            src={JobUtil.randomImage()}
+                          />
+                          <p
+                            className="text-dark my-1"
+                            style={{ fontSize: "1.2em" }}
+                          >
+                            Category {n + 1}
+                          </p>
+                        </a>
+                      </Col>
+                    ))}
+                  </Row>
+                </Card>
+              </Col>
             </Row>
           </Col>
         </Row>

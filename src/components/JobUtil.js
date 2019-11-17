@@ -15,6 +15,17 @@ JobUtil.titleList = [
   "Please feed my goldfish while I'm away",
   "Need a babysitter to sit on my babies"
 ];
+JobUtil.gigList = [
+  "I can write a song in 5 minutes",
+  "I can translate Tamil to Mandarin",
+  "I can draw anything you want",
+  "I can create 3D models of environments",
+  "I can feed your goldfish while you're away",
+  "I can do your homework for you",
+  "I can join your MLM and build up your business",
+  "I can mix your music tracks",
+  "I can record a voice over for your videos"
+];
 JobUtil.nameList = [
   "Absalom",
   "Bernard",
@@ -98,6 +109,8 @@ JobUtil.messageArray = [
 
 JobUtil.randomTitle = () =>
   JobUtil.titleList[Math.floor(Math.random() * JobUtil.titleList.length)];
+JobUtil.randomGig = () =>
+  JobUtil.gigList[Math.floor(Math.random() * JobUtil.gigList.length)];
 JobUtil.randomImage = () =>
   `/gig-thumbnail-${Math.ceil(Math.random() * 7)}-square.jpg`;
 JobUtil.randomName = () =>

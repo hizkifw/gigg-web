@@ -15,7 +15,7 @@ import {
 const FreelanceDashboard = props => {
   return (
     <React.Fragment>
-      <TopNav loggedIn />
+      <TopNav loggedIn freelancer />
       <Container className="mt-4">
         <Row>
           <Col lg={3} md={3} sm={12}>

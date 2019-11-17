@@ -35,7 +35,7 @@ const ChatBubble = props => (
 const ChatPage = props => {
   return (
     <React.Fragment>
-      <TopNav loggedIn />
+      <TopNav loggedIn freelancer />
       <Container className="mt-4">
         <Card body>
           <Row>

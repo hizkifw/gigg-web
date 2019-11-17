@@ -16,11 +16,11 @@ import {
 const JobPage = props => {
   return (
     <React.Fragment>
-      <TopNav loggedIn />
+      <TopNav loggedIn freelancer />
       <Container className="mt-4">
         <Row className="mb-4">
           <Col>
-            <Button href="#/search" variant="outline-secondary">
+            <Button href="#/search/jobs" variant="outline-secondary">
               <i class="fas fa-chevron-left mr-2"></i>
               Back to search
             </Button>

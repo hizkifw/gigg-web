@@ -30,7 +30,8 @@ const App = () => {
       <Route path="/register" component={RegisterPage} />
       <Route path="/dash/freelance" component={FreelanceDashboard} />
       <Route path="/dash/employ" component={EmployerDashboard} />
-      <Route path="/search" component={SearchPage} />
+      <Route path="/search/jobs" component={() => <SearchPage freelancer />} />
+      <Route path="/search/gigs" component={SearchPage} />
       <Route path="/job" component={JobPage} />
       <Route path="/chat" component={ChatPage} />
     </HashRouter>

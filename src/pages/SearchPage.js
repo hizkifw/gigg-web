@@ -12,22 +12,27 @@ import {
   Nav
 } from "react-bootstrap";
 
-const SearchPagination = props => (
-  <Pagination style={{ justifyContent: "center" }}>
-    <Pagination.First href="#/search/0" />
-    <Pagination.Prev href="#/search/0" />
-    {Array.from(Array(10).keys()).map(n => (
-      <Pagination.Item href={`#/search/${n + 1}`}>{n + 1}</Pagination.Item>
-    ))}
-    <Pagination.Next href="#/search/99" />
-    <Pagination.Last href="#/search/99" />
-  </Pagination>
-);
+const SearchPagination = props => {
+  const type = props.freelancer ? "jobs" : "gigs";
+  return (
+    <Pagination style={{ justifyContent: "center" }}>
+      <Pagination.First href={`#/search/${type}/0`} />
+      <Pagination.Prev href={`#/search/${type}/0`} />
+      {Array.from(Array(10).keys()).map(n => (
+        <Pagination.Item href={`#/search/${type}/${n + 1}`}>
+          {n + 1}
+        </Pagination.Item>
+      ))}
+      <Pagination.Next href={`#/search/${type}/0`} />
+      <Pagination.Last href={`#/search/${type}/0`} />
+    </Pagination>
+  );
+};
 
 const SearchPage = props => {
   return (
     <React.Fragment>
-      <TopNav loggedIn />
+      <TopNav loggedIn freelancer={props.freelancer} />
       <Container className="mt-4">
         <Row>
           <Col lg={3} md={3} sm={12}>
@@ -36,7 +41,8 @@ const SearchPage = props => {
             </Card>
           </Col>
           <Col>
-            <SearchPagination />
+            <h3>Searching for {props.freelancer ? "jobs" : "gigs"}</h3>
+            <SearchPagination {...props} />
             {Array.from(Array(10).keys()).map(n => (
               <Row className="border-bottom py-3">
                 <Col md={2} sm={4} className="text-center">
@@ -46,7 +52,9 @@ const SearchPage = props => {
                 </Col>
                 <Col sm={8}>
                   <a className="d-block" href="#/job">
-                    {JobUtil.randomTitle()}
+                    {props.freelancer
+                      ? JobUtil.randomTitle()
+                      : JobUtil.randomGig()}
                   </a>
                   <p className="text-muted mt-1">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -57,12 +65,16 @@ const SearchPage = props => {
                 </Col>
                 <Col sm={4} className="d-md-none" />
                 <Col md={2} sm={8}>
+                  {props.freelancer && (
+                    <div className="d-md-block d-sm-inline-block d-xs-inline-block mx-2">
+                      <p className="mb-0 text-muted">Offers</p>
+                      <h2>{`${Math.floor(Math.random() * 20)}`}</h2>
+                    </div>
+                  )}
                   <div className="d-md-block d-sm-inline-block d-xs-inline-block mx-2">
-                    <p className="mb-0 text-muted">Offers</p>
-                    <h2>{`${Math.floor(Math.random() * 20)}`}</h2>
-                  </div>
-                  <div className="d-md-block d-sm-inline-block d-xs-inline-block mx-2">
-                    <p className="mb-0 text-muted">Budget</p>
+                    <p className="mb-0 text-muted">
+                      {props.freelancer ? "Budget" : "Asking"}
+                    </p>
                     <h2>{`$${Math.ceil(Math.random() * 100)}`}</h2>
                   </div>
                 </Col>
@@ -75,7 +87,7 @@ const SearchPage = props => {
                 </Col>
               </Row>
             ))}
-            <SearchPagination />
+            <SearchPagination {...props} />
           </Col>
         </Row>
       </Container>

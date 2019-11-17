@@ -25,7 +25,10 @@ const TopNav = props => {
                 type="text"
                 placeholder="Search for jobs and services"
                 onKeyDown={e => {
-                  if (e.keyCode === 13) window.location = "#/search";
+                  if (e.keyCode === 13) {
+                    if (props.freelancer) window.location = "#/search/jobs";
+                    else window.location = "#/search/gigs";
+                  }
                 }}
               />
             )}
