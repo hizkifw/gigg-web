@@ -18,11 +18,13 @@ const Footer = props => (
     <Container className="">
       <Row>
         <Col md={4}>
-          <Image
-            fluid
-            src="logo-white-transparent.png"
-            style={{ maxHeight: "2em", filter: "brightness(0.5)" }}
-          />
+          <a href="#/">
+            <Image
+              fluid
+              src="logo-white-transparent.png"
+              style={{ maxHeight: "2em", filter: "brightness(0.5)" }}
+            />
+          </a>
           <p className="mt-2" style={{ fontSize: ".8em" }}>
             Copyright &copy; {new Date().getFullYear()} gigg.
             <br />

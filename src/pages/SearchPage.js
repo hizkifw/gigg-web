@@ -76,58 +76,73 @@ const SearchPage = props => {
           <Col>
             <h3>Searching for {props.freelancer ? "jobs" : "gigs"}</h3>
             <SearchPagination {...props} />
-            {Array.from(Array(10).keys()).map(n => (
-              <Row className="border-bottom py-3">
-                <Col md={2} sm={4} className="text-center">
-                  <a href={`#/${props.freelancer ? "job" : "gig"}`}>
-                    <Image roundedCircle fluid src={JobUtil.randomImage()} />
-                  </a>
-                </Col>
-                <Col sm={8}>
-                  <a
-                    className="d-block"
-                    href={`#/${props.freelancer ? "job" : "gig"}`}
-                  >
-                    {props.freelancer
-                      ? JobUtil.randomTitle()
-                      : JobUtil.randomGig()}
-                  </a>
-                  <p className="text-muted mt-1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean ullamcorper ullamcorper massa at placerat.
-                    Pellentesque dapibus lorem mi, vitae vestibulum ex posuere
-                    sit amet.
-                  </p>
-                </Col>
-                <Col sm={4} className="d-md-none" />
-                <Col md={2} sm={8}>
-                  {props.freelancer && (
-                    <div className="d-md-block d-sm-inline-block d-xs-inline-block mx-2">
-                      <p className="mb-0 text-muted">Offers</p>
-                      <h2>{`${Math.floor(Math.random() * 20)}`}</h2>
-                    </div>
-                  )}
-                  <div className="d-md-block d-sm-inline-block d-xs-inline-block mx-2">
-                    <p className="mb-0 text-muted">
-                      {props.freelancer ? "Budget" : "Asking"}
+            {Array.from(Array(10).keys()).map(n => {
+              const title = props.freelancer
+                ? JobUtil.randomTitle()
+                : JobUtil.randomGig();
+              const price = Math.ceil(Math.random() * 100);
+              const offers = Math.floor(Math.random() * 20);
+              const image = JobUtil.randomImage();
+
+              const postData = btoa(
+                JSON.stringify({ title, price, offers, image })
+              );
+
+              return (
+                <Row className="border-bottom py-3">
+                  <Col md={2} sm={4} className="text-center">
+                    <a
+                      href={`#/${props.freelancer ? "job" : "gig"}/${postData}`}
+                    >
+                      <Image roundedCircle fluid src={image} />
+                    </a>
+                  </Col>
+                  <Col sm={8}>
+                    <a
+                      className="d-block"
+                      href={`#/${props.freelancer ? "job" : "gig"}/${postData}`}
+                    >
+                      {title}
+                    </a>
+                    <p className="text-muted mt-1">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Aenean ullamcorper ullamcorper massa at placerat.
+                      Pellentesque dapibus lorem mi, vitae vestibulum ex posuere
+                      sit amet.
                     </p>
-                    <h2>{`$${Math.ceil(Math.random() * 100)}`}</h2>
-                  </div>
-                </Col>
-                <Col sm={4} md={2} />
-                <Col sm={8} md={10} lg={10}>
-                  <a
-                    href={`#/${props.freelancer ? "job" : "gig"}`}
-                    className="mr-2 pr-2 border-right"
-                  >
-                    View details
-                  </a>
-                  <a href={`#/${props.freelancer ? "job" : "gig"}`}>
-                    Send offer
-                  </a>
-                </Col>
-              </Row>
-            ))}
+                  </Col>
+                  <Col sm={4} className="d-md-none" />
+                  <Col md={2} sm={8}>
+                    {props.freelancer && (
+                      <div className="d-md-block d-sm-inline-block d-xs-inline-block mx-2">
+                        <p className="mb-0 text-muted">Offers</p>
+                        <h2>{offers}</h2>
+                      </div>
+                    )}
+                    <div className="d-md-block d-sm-inline-block d-xs-inline-block mx-2">
+                      <p className="mb-0 text-muted">
+                        {props.freelancer ? "Budget" : "Asking"}
+                      </p>
+                      <h2>{`$${price}`}</h2>
+                    </div>
+                  </Col>
+                  <Col sm={4} md={2} />
+                  <Col sm={8} md={10} lg={10}>
+                    <a
+                      href={`#/${props.freelancer ? "job" : "gig"}/${postData}`}
+                      className="mr-2 pr-2 border-right"
+                    >
+                      View details
+                    </a>
+                    <a
+                      href={`#/${props.freelancer ? "job" : "gig"}/${postData}`}
+                    >
+                      Send offer
+                    </a>
+                  </Col>
+                </Row>
+              );
+            })}
             <SearchPagination {...props} />
           </Col>
         </Row>

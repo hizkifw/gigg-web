@@ -34,13 +34,16 @@ const App = () => {
       <Route path="/register" component={RegisterPage} />
       <Route path="/dash/freelance" component={FreelanceDashboard} />
       <Route path="/dash/employ" component={EmployerDashboard} />
-      <Route path="/search/jobs" component={() => <SearchPage freelancer />} />
+      <Route
+        path="/search/jobs"
+        component={p => <SearchPage {...p} freelancer />}
+      />
       <Route path="/search/gigs" component={SearchPage} />
       <Route path="/job" component={JobPage} />
-      <Route path="/gig" component={() => <JobPage gig />} />
+      <Route path="/gig" component={p => <JobPage {...p} gig />} />
       <Route path="/chat" component={ChatPage} />
       <Route path="/new/job" component={NewPostPage} />
-      <Route path="/new/gig" component={() => <NewPostPage gig />} />
+      <Route path="/new/gig" component={p => <NewPostPage {...p} gig />} />
       <Footer />
     </HashRouter>
   );

@@ -14,7 +14,7 @@ import {
 const NewPostPage = props => {
   return (
     <React.Fragment>
-      <TopNav loggedIn />
+      <TopNav loggedIn freelancer={props.gig} />
       <Container>
         <Row className="mt-4">
           <Col />

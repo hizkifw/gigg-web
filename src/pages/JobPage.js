@@ -14,6 +14,7 @@ import {
 } from "react-bootstrap";
 
 const JobPage = props => {
+  const jobData = JSON.parse(atob(window.location.hash.split("/")[2]));
   return (
     <React.Fragment>
       <TopNav loggedIn freelancer />
@@ -33,21 +34,21 @@ const JobPage = props => {
           <Col>
             <Row>
               <Col md={3}>
-                <Image fluid roundedCircle src={JobUtil.randomImage()} />
+                <Image fluid roundedCircle src={jobData.image} />
               </Col>
               <Col>
-                <h4>{JobUtil.randomTitle()}</h4>
+                <h4>{jobData.title}</h4>
                 <Row>
                   <Col>
                     <div className="d-inline-block mr-5">
                       <p className="mb-0 text-muted">
                         {props.gig ? "Asking" : "Budget"}
                       </p>
-                      <h2>{`$${Math.floor(Math.random() * 100)}`}</h2>
+                      <h2>{`$${jobData.price}`}</h2>
                     </div>
                     <div className="d-inline-block mr-5">
                       <p className="mb-0 text-muted">Offers</p>
-                      <h2>{`${Math.floor(Math.random() * 20)}`}</h2>
+                      <h2>{`${jobData.offers}`}</h2>
                     </div>
                   </Col>
                 </Row>
