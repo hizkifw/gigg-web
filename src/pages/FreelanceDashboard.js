@@ -2,6 +2,7 @@ import React from "react";
 import TopNav from "../components/TopNav";
 import JobUtil from "../components/JobUtil";
 import {
+  Badge,
   Button,
   Card,
   Container,
@@ -51,7 +52,12 @@ const FreelanceDashboard = props => {
                 <Nav.Link className="font-weight-bold">APPS</Nav.Link>
                 <Nav className="flex-column ml-4">
                   <Nav.Link>Calendar</Nav.Link>
-                  <Nav.Link href="#/chat">Messages</Nav.Link>
+                  <Nav.Link href="#/chat">
+                    Messages{" "}
+                    <Badge variant="primary" style={{ fontSize: "0.8em" }}>
+                      {Math.floor(Math.random() * 10)}
+                    </Badge>
+                  </Nav.Link>
                   <Nav.Link>Projects Board</Nav.Link>
                 </Nav>
                 <Nav.Link className="font-weight-bold">PAGES</Nav.Link>
@@ -70,12 +76,10 @@ const FreelanceDashboard = props => {
                   className="text-dark"
                   style={{ textDecoration: "none" }}
                 >
-                  <Card body className="mb-2">
-                    <h1 className="d-inline align-middle mr-3 pr-3 border-right">
-                      +
-                    </h1>
+                  <Button block className="mb-2">
+                    <h1 className="d-inline align-middle mr-3">+</h1>
                     Post a gig
-                  </Card>
+                  </Button>
                 </a>
                 <a
                   href="#/chat"
@@ -89,18 +93,7 @@ const FreelanceDashboard = props => {
                     Pending orders
                   </Card>
                 </a>
-                <a
-                  href="#/chat"
-                  className="text-dark"
-                  style={{ textDecoration: "none" }}
-                >
-                  <Card body className="mb-2">
-                    <h1 className="d-inline align-middle mr-3 pr-3 border-right">
-                      {Math.floor(Math.random() * 10)}
-                    </h1>
-                    Unread messages
-                  </Card>
-                </a>
+
                 <Card className="mb-2">
                   <Card.Img variant="top" src="/gig-thumbnail-1.jpg" />
                   <Card.Body>
