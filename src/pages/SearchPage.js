@@ -95,9 +95,21 @@ const SearchPage = props => {
               const offers = Math.floor(Math.random() * 20);
               const image = JobUtil.randomImage();
               const rating = (Math.ceil(Math.random() * 50) / 10).toFixed(1);
+              const employerImage = JobUtil.randomProfilePicture();
+              const employerName = JobUtil.randomName();
+              const employerLocation = JobUtil.randomLocation();
 
               const postData = btoa(
-                JSON.stringify({ title, price, offers, image, rating })
+                JSON.stringify({
+                  title,
+                  price,
+                  offers,
+                  image,
+                  rating,
+                  employerImage,
+                  employerName,
+                  employerLocation
+                })
               );
 
               return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TopNav from "../components/TopNav";
 import JobUtil from "../components/JobUtil";
 import {
@@ -15,6 +15,7 @@ import {
 
 const JobPage = props => {
   const jobData = JSON.parse(atob(window.location.hash.split("/")[2]));
+  const [offerSent, setOfferSent] = useState(false);
   return (
     <React.Fragment>
       <TopNav loggedIn freelancer />
@@ -68,7 +69,18 @@ const JobPage = props => {
                 </Row>
                 <Row>
                   <Col>
-                    <Button variant="primary">Send offer</Button>
+                    <Button
+                      variant={offerSent ? "success" : "primary"}
+                      onClick={() => setOfferSent(true)}
+                    >
+                      {offerSent ? (
+                        <React.Fragment>
+                          <i className="fas fa-check mr-2"></i> Offer sent!
+                        </React.Fragment>
+                      ) : (
+                        "Send offer"
+                      )}
+                    </Button>
                   </Col>
                 </Row>
               </Col>
@@ -107,11 +119,7 @@ const JobPage = props => {
               <Row>
                 <Col md={3} />
                 <Col md={6} className="text-center">
-                  <Image
-                    roundedCircle
-                    fluid
-                    src={JobUtil.randomProfilePicture()}
-                  />
+                  <Image roundedCircle fluid src={jobData.employerImage} />
                 </Col>
               </Row>
               <Row>
@@ -120,7 +128,7 @@ const JobPage = props => {
                     className="mt-2 ml-3 d-inline align-middle"
                     style={{ fontSize: "1.5em" }}
                   >
-                    {JobUtil.randomName()}
+                    {jobData.employerName}
                   </p>
                   <i class="fas fa-check-circle text-primary ml-2 align-middle"></i>
                 </Col>
@@ -129,7 +137,7 @@ const JobPage = props => {
                 <Col className="text-center">
                   <i class="fas fa-map-marker-alt text-muted"></i>
                   <p className="d-inline text-muted ml-2">
-                    {JobUtil.randomLocation()}
+                    {jobData.employerLocation}
                   </p>
                 </Col>
               </Row>

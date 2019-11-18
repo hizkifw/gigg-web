@@ -18,8 +18,22 @@ const NewPostPage = props => {
   const offers = 0;
   const image = JobUtil.randomImage();
   const rating = "0.0";
+  const employerImage = "zuck.jpg";
+  const employerName = "Doraemon";
+  const employerLocation = "Somewhere over the rainbow";
 
-  const postData = btoa(JSON.stringify({ title, price, offers, image }));
+  const postData = btoa(
+    JSON.stringify({
+      title,
+      price,
+      offers,
+      image,
+      rating,
+      employerImage,
+      employerName,
+      employerLocation
+    })
+  );
   return (
     <React.Fragment>
       <TopNav loggedIn freelancer={props.gig} />
