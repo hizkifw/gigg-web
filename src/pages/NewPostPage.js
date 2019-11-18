@@ -19,7 +19,7 @@ const NewPostPage = props => {
   const image = JobUtil.randomImage();
   const rating = "0.0";
   const employerImage = "zuck.jpg";
-  const employerName = "Doraemon";
+  const employerName = "John Doe";
   const employerLocation = "Somewhere over the rainbow";
 
   const postData = btoa(

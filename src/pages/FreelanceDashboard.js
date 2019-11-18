@@ -38,7 +38,7 @@ const FreelanceDashboard = props => {
                     className="mt-2 ml-3 d-inline align-middle"
                     style={{ fontSize: "1.5em" }}
                   >
-                    ドラえもん
+                    John Doe
                   </p>
                 </Col>
               </Row>
