@@ -40,16 +40,28 @@ const JobPage = props => {
                 <h4>{jobData.title}</h4>
                 <Row>
                   <Col>
-                    <div className="d-inline-block mr-5">
+                    <div className="d-inline-block mr-5 align-top">
                       <p className="mb-0 text-muted">
                         {props.gig ? "Asking" : "Budget"}
                       </p>
                       <h2>{`$${jobData.price}`}</h2>
                     </div>
-                    {!props.gig && (
+                    {!props.gig ? (
                       <div className="d-inline-block mr-5">
                         <p className="mb-0 text-muted">Offers</p>
                         <h2>{`${jobData.offers}`}</h2>
+                      </div>
+                    ) : (
+                      <div className="d-inline-block mr-5 align-top">
+                        <p className="mb-0 text-muted">Rating</p>
+                        <i
+                          className="fas fa-star text-primary mr-2 mt-2 align-top d-inline-block"
+                          style={{ fontSize: "1.2em" }}
+                        ></i>
+                        <h2 className="d-inline-block align-middle">
+                          <span>{jobData.rating}</span>
+                          <span className="text-muted">&nbsp;/ 5.0</span>
+                        </h2>
                       </div>
                     )}
                   </Col>
@@ -78,7 +90,7 @@ const JobPage = props => {
                 <h5>Skill required</h5>
                 <div className="mb-3" style={{ fontSize: "1.2em" }}>
                   {["Art", "Music", "Patience", "Programming"].map(x => (
-                    <Badge variant="secondary" className="mr-1">
+                    <Badge variant="primary" className="mr-1">
                       {x}
                     </Badge>
                   ))}

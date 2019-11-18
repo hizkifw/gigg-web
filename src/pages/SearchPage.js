@@ -2,6 +2,7 @@ import React from "react";
 import TopNav from "../components/TopNav";
 import JobUtil from "../components/JobUtil";
 import {
+  Badge,
   Card,
   Container,
   Pagination,
@@ -86,7 +87,7 @@ const SearchPage = props => {
               const rating = (Math.ceil(Math.random() * 50) / 10).toFixed(1);
 
               const postData = btoa(
-                JSON.stringify({ title, price, offers, image })
+                JSON.stringify({ title, price, offers, image, rating })
               );
 
               return (
@@ -111,6 +112,13 @@ const SearchPage = props => {
                       Pellentesque dapibus lorem mi, vitae vestibulum ex posuere
                       sit amet.
                     </p>
+                    <div className="mb-3" style={{ fontSize: "1.2em" }}>
+                      {["Art", "Music", "Patience", "Programming"].map(x => (
+                        <Badge variant="primary" className="mr-1">
+                          {x}
+                        </Badge>
+                      ))}
+                    </div>
                   </Col>
                   <Col sm={4} className="d-md-none" />
                   <Col md={2} sm={8}>
