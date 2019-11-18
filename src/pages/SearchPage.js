@@ -11,7 +11,8 @@ import {
   Row,
   Col,
   Nav,
-  InputGroup
+  InputGroup,
+  NavDropdown
 } from "react-bootstrap";
 
 const SearchPagination = props => {
@@ -75,7 +76,16 @@ const SearchPage = props => {
             </Card>
           </Col>
           <Col>
-            <h3>Searching for {props.freelancer ? "jobs" : "gigs"}</h3>
+            <h3>
+              Searching for
+              <NavDropdown
+                title={props.freelancer ? "jobs" : "gigs"}
+                className="d-inline-block"
+              >
+                <NavDropdown.Item href="#/search/gigs">gigs</NavDropdown.Item>
+                <NavDropdown.Item href="#/search/jobs">jobs</NavDropdown.Item>
+              </NavDropdown>
+            </h3>
             <SearchPagination {...props} />
             {Array.from(Array(10).keys()).map(n => {
               const title = props.freelancer
