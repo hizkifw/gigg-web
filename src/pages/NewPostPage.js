@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TopNav from "../components/TopNav";
+import JobUtil from "../components/JobUtil";
 import {
   Button,
   Card,
@@ -12,6 +13,13 @@ import {
 } from "react-bootstrap";
 
 const NewPostPage = props => {
+  const [title, setTitle] = useState(`My Awesome ${props.gig ? "Gig" : "Job"}`);
+  const [price, setPrice] = useState(0);
+  const offers = 0;
+  const image = JobUtil.randomImage();
+  const rating = "0.0";
+
+  const postData = btoa(JSON.stringify({ title, price, offers, image }));
   return (
     <React.Fragment>
       <TopNav loggedIn freelancer={props.gig} />
@@ -34,6 +42,7 @@ const NewPostPage = props => {
                           placeholder={`My Awesome ${
                             props.gig ? "Gig" : "Job"
                           }`}
+                          onChange={e => setTitle(e.target.value)}
                         />
                       </Form.Group>
                       <Form.Group>
@@ -53,7 +62,11 @@ const NewPostPage = props => {
                           <InputGroup.Prepend>
                             <InputGroup.Text>$</InputGroup.Text>
                           </InputGroup.Prepend>
-                          <Form.Control type="number" placeholder="1,770.13" />
+                          <Form.Control
+                            type="number"
+                            placeholder="1,770.13"
+                            onChange={e => setPrice(e.target.value)}
+                          />
                         </InputGroup>
                       </Form.Group>
                     </Col>
@@ -80,7 +93,11 @@ const NewPostPage = props => {
                         <Button
                           variant="primary"
                           block
-                          href={props.gig ? "#/gig" : "#/job"}
+                          href={
+                            props.gig
+                              ? `#/gig/${postData}`
+                              : `#/job/${postData}`
+                          }
                         >
                           Submit
                         </Button>

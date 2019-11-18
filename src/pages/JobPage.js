@@ -23,7 +23,7 @@ const JobPage = props => {
           <Col>
             <Button
               href={`#/search/${props.gig ? "gigs" : "jobs"}`}
-              variant="outline-secondary"
+              variant="secondary"
             >
               <i class="fas fa-chevron-left mr-2"></i>
               Back to search
@@ -46,10 +46,12 @@ const JobPage = props => {
                       </p>
                       <h2>{`$${jobData.price}`}</h2>
                     </div>
-                    <div className="d-inline-block mr-5">
-                      <p className="mb-0 text-muted">Offers</p>
-                      <h2>{`${jobData.offers}`}</h2>
-                    </div>
+                    {!props.gig && (
+                      <div className="d-inline-block mr-5">
+                        <p className="mb-0 text-muted">Offers</p>
+                        <h2>{`${jobData.offers}`}</h2>
+                      </div>
+                    )}
                   </Col>
                 </Row>
                 <Row>

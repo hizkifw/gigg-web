@@ -83,6 +83,7 @@ const SearchPage = props => {
               const price = Math.ceil(Math.random() * 100);
               const offers = Math.floor(Math.random() * 20);
               const image = JobUtil.randomImage();
+              const rating = (Math.ceil(Math.random() * 50) / 10).toFixed(1);
 
               const postData = btoa(
                 JSON.stringify({ title, price, offers, image })
@@ -113,17 +114,27 @@ const SearchPage = props => {
                   </Col>
                   <Col sm={4} className="d-md-none" />
                   <Col md={2} sm={8}>
-                    {props.freelancer && (
-                      <div className="d-md-block d-sm-inline-block d-xs-inline-block mx-2">
-                        <p className="mb-0 text-muted">Offers</p>
-                        <h2>{offers}</h2>
-                      </div>
-                    )}
                     <div className="d-md-block d-sm-inline-block d-xs-inline-block mx-2">
                       <p className="mb-0 text-muted">
                         {props.freelancer ? "Budget" : "Asking"}
                       </p>
                       <h2>{`$${price}`}</h2>
+                    </div>
+                    <div className="d-md-block d-sm-inline-block d-xs-inline-block mx-2">
+                      {props.freelancer ? (
+                        <React.Fragment>
+                          <p className="mb-0 text-muted">Offers</p>
+                          <h2>{offers}</h2>
+                        </React.Fragment>
+                      ) : (
+                        <React.Fragment>
+                          <p>
+                            <i className="fas fa-star text-primary mr-2"></i>
+                            <span>{rating}</span>
+                            <span className="text-muted">&nbsp;/ 5.0</span>
+                          </p>
+                        </React.Fragment>
+                      )}
                     </div>
                   </Col>
                   <Col sm={4} md={2} />
