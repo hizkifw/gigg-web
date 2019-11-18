@@ -22,7 +22,8 @@ const FreelanceDashboard = props => {
           <Col lg={3} md={3} sm={12}>
             <Card body>
               <Row className="mt-3">
-                <Col>
+                <Col md={2} />
+                <Col md={8}>
                   <Image
                     roundedCircle
                     fluid
@@ -30,8 +31,15 @@ const FreelanceDashboard = props => {
                     src="/zuck.jpg"
                   />
                 </Col>
-                <Col>
-                  <p className="mb-1">Joe Succerberg</p>
+              </Row>
+              <Row>
+                <Col className="text-center">
+                  <p
+                    className="mt-2 ml-3 d-inline align-middle"
+                    style={{ fontSize: "1.5em" }}
+                  >
+                    Joe Succerberg
+                  </p>
                 </Col>
               </Row>
               <Row>
@@ -45,25 +53,21 @@ const FreelanceDashboard = props => {
                 <Nav.Link className="font-weight-bold">DASHBOARD</Nav.Link>
                 <Nav className="flex-column ml-4">
                   <Nav.Link>Overview</Nav.Link>
-                  <Nav.Link>Performance</Nav.Link>
-                  <Nav.Link>Analytics</Nav.Link>
-                  <Nav.Link>Projects</Nav.Link>
-                </Nav>
-                <Nav.Link className="font-weight-bold">APPS</Nav.Link>
-                <Nav className="flex-column ml-4">
-                  <Nav.Link>Calendar</Nav.Link>
                   <Nav.Link href="#/chat">
                     Messages{" "}
                     <Badge variant="primary" style={{ fontSize: "0.8em" }}>
                       {Math.floor(Math.random() * 10)}
                     </Badge>
                   </Nav.Link>
-                  <Nav.Link>Projects Board</Nav.Link>
+                  <Nav.Link>My gigs</Nav.Link>
+                  <Nav.Link>Settings</Nav.Link>
                 </Nav>
-                <Nav.Link className="font-weight-bold">PAGES</Nav.Link>
+                <Nav.Link className="font-weight-bold">PROJECTS</Nav.Link>
                 <Nav className="flex-column ml-4">
-                  <Nav.Link>User Profile</Nav.Link>
-                  <Nav.Link>Invoices</Nav.Link>
+                  <Nav.Link>Pending projects</Nav.Link>
+                  <Nav.Link>Ongoing</Nav.Link>
+                  <Nav.Link>Due for submission</Nav.Link>
+                  <Nav.Link>Complete</Nav.Link>
                 </Nav>
               </Nav>
             </Card>
@@ -80,18 +84,6 @@ const FreelanceDashboard = props => {
                     <h1 className="d-inline align-middle mr-3">+</h1>
                     Post a gig
                   </Button>
-                </a>
-                <a
-                  href="#/chat"
-                  className="text-dark"
-                  style={{ textDecoration: "none" }}
-                >
-                  <Card body className="mb-2">
-                    <h1 className="d-inline align-middle mr-3 pr-3 border-right">
-                      43
-                    </h1>
-                    Pending orders
-                  </Card>
                 </a>
 
                 <Card className="mb-2">

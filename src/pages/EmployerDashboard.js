@@ -23,7 +23,8 @@ const EmployerDashboard = props => {
           <Col lg={3} md={3} sm={12}>
             <Card body>
               <Row className="mt-3">
-                <Col>
+                <Col md={2} />
+                <Col md={8}>
                   <Image
                     roundedCircle
                     fluid
@@ -31,10 +32,18 @@ const EmployerDashboard = props => {
                     src="/zuck.jpg"
                   />
                 </Col>
-                <Col>
-                  <p className="mb-1">Joe Succerberg</p>
+              </Row>
+              <Row>
+                <Col className="text-center">
+                  <p
+                    className="mt-2 ml-3 d-inline align-middle"
+                    style={{ fontSize: "1.5em" }}
+                  >
+                    Joe Succerberg
+                  </p>
                 </Col>
               </Row>
+
               <Row>
                 <Col className="mt-3 mb-2">
                   <Button block variant="primary" href="#/dash/freelance">
